@@ -1,0 +1,22 @@
+<h1>Index des users</h1>
+ 
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Email</th>
+
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= link_to 'Montrer le profil', user_path(user) %></td>
+      <td><%= link_to 'Editer le profil', edit_user_path(user) %></td>
+      <td><%= link_to 'Destroy', user_path(user),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p> <%= link_to("Ajouter un nouveau user", new_user_path) %> </p>
