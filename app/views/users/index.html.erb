@@ -6,6 +6,7 @@
     <th>Email</th>
 
   </tr>
+  <% @users = User.all%>
   <% @users.each do |user| %>
     <tr>
       <td><%= user.name %></td>
